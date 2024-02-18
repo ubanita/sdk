@@ -1,0 +1,6 @@
+*.vsix
+controller
+demos
+docs
+engines
+apidocs
