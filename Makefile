@@ -31,7 +31,6 @@ macarm:
 	mkdir -p engines/mac-arm
 	cd ../firespark/cmd/firespark && CGO_ENABLED=1 go build -o firespark-mac-arm
 	mv ../firespark/cmd/firespark/firespark-mac-arm engines/mac-arm/firespark
-	cp ../firespark/cmd/firespark/run.sh engines/mac-arm
 
 macarm-up:
 	gsutil cp engines/mac-arm/firespark gs://downloads.ernestmicklei.com/ubanita/engines/mac-arm/firespark
