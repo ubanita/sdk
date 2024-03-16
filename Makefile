@@ -39,10 +39,10 @@ macarm-up:
 macintel:	
 	mkdir -p engines/mac-intel
 	cd ../firespark/cmd/firespark && go build -o firespark-mac-intel
-	mv ../firespark/cmd/firespark/firespark-mac-arm engines/mac-intel/firespark
+	mv ../firespark/cmd/firespark/firespark-mac-intel engines/mac-intel/firespark
 
 macintel-up:
-	gsutil cp engines/mac-arm/firespark-mac-intel gs://downloads.ernestmicklei.com/ubanita/engines/mac-intel/firespark
+	gsutil cp engines/mac-intel/firespark gs://downloads.ernestmicklei.com/ubanita/engines/mac-intel/firespark
 
 zip:
 	zip -vr sdk.zip . -x "Makefile" -x ".git/*" -x "*.DS_Store"
