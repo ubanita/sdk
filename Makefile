@@ -6,6 +6,7 @@ clean:
 	rm -rf demos
 	rm -rf docs
 	rm -rf engines
+	rm -rf *.zip
 
 games:
 	mkdir -p demos
@@ -42,3 +43,9 @@ macintel:
 
 macintel-up:
 	gsutil cp engines/mac-arm/firespark-mac-intel gs://downloads.ernestmicklei.com/ubanita/engines/mac-intel/firespark
+
+zip:
+	zip -vr sdk.zip . -x "Makefile" -x ".git/*" -x "*.DS_Store"
+
+zip-up:
+	gsutil cp sdk.zip gs://downloads.ernestmicklei.com/ubanita/sdk.zip
