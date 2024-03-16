@@ -1,11 +1,11 @@
-all: clean games vscode doks control
+all: clean games vscode doks control apidoks
 
 clean:
 	rm -f *.vsix
 	rm -rf controller
 	rm -rf demos
 	rm -rf docs
-	rm -rf engines
+	rm -rf apidocs
 	rm -rf *.zip
 
 games:
@@ -21,6 +21,10 @@ doks:
 	mkdir -p docs
 	cd ../ubanita-docs && make generate
 	cp -r ../ubanita-docs/public/ docs
+
+apidoks:
+	mkdir -p apidocs
+	cp -r ../apidocs/src/ apidocs
 
 control:
 	mkdir -p controller
