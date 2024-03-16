@@ -43,6 +43,9 @@ macintel:
 macintel-up:
 	gsutil cp engines/mac-intel/firespark gs://downloads.ernestmicklei.com/ubanita/engines/mac-intel/firespark
 
+macintel-down:
+	gsutil cp gs://downloads.ernestmicklei.com/ubanita/engines/mac-intel/firespark engines/mac-intel/firespark
+
 zip:
 	zip -vr sdk.zip . -x "Makefile" -x ".git/*" -x "*.DS_Store"
 
