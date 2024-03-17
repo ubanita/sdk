@@ -1,10 +1,11 @@
-all: clean games vscode doks control apidoks
+all: clean games vscode doks control apidoks fonts
 
 clean:
 	rm -f *.vsix
-	rm -rf controller
+	rm -rf static
 	rm -rf demos
 	rm -rf docs
+	rm -rf static
 	rm -rf apidocs
 	rm -rf *.zip
 
@@ -27,9 +28,13 @@ apidoks:
 	cp -r ../apidocs/src/ apidocs
 
 control:
-	mkdir -p controller
+	mkdir -p static/controller
 	cd ../ubanita_controller && make build
-	cp -r ../ubanita_controller/build/ controller	
+	cp -r ../ubanita_controller/build/ static/controller	
+
+fonts:
+	mkdir -p static/fonts
+	gsutil cp -r gs://downloads.ernestmicklei.com/ubanita/fonts static
 
 macarm:	
 	mkdir -p engines/mac-arm
