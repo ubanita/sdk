@@ -33,16 +33,16 @@ control:
 
 macarm:	
 	mkdir -p engines/mac-arm
-	cd ../firespark/cmd/firespark && CGO_ENABLED=1 go build -o firespark-mac-arm
-	mv ../firespark/cmd/firespark/firespark-mac-arm engines/mac-arm/firespark
+	cd ../firespark/cmd/firespark && sh compile.sh
+	mv ../firespark/cmd/firespark/firespark engines/mac-arm/firespark
 
 macarm-up:
 	gsutil cp engines/mac-arm/firespark gs://downloads.ernestmicklei.com/ubanita/engines/mac-arm/firespark
 
 macintel:	
 	mkdir -p engines/mac-intel
-	cd ../firespark/cmd/firespark && go build -o firespark-mac-intel
-	mv ../firespark/cmd/firespark/firespark-mac-intel engines/mac-intel/firespark
+	cd ../firespark/cmd/firespark && sh compile.sh
+	mv ../firespark/cmd/firespark/firespark engines/mac-intel/firespark
 
 macintel-up:
 	gsutil cp engines/mac-intel/firespark gs://downloads.ernestmicklei.com/ubanita/engines/mac-intel/firespark
