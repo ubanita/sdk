@@ -1,4 +1,4 @@
-all: clean games vscode doks control apidoks fonts
+all: clean games vscode doks control apidoks fonts html
 
 clean:
 	rm -f *.vsix
@@ -8,6 +8,10 @@ clean:
 	rm -rf static
 	rm -rf apidocs
 	rm -rf *.zip
+
+html:
+	mkdir -p static
+	cp ../firespark/cmd/firespark/static/* static
 
 games:
 	mkdir -p demos
